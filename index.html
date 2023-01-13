@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
+    <title>Desafío</title>
+
+    <style>
+        .btn-success{
+            padding: 0.5rem 1rem;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            border: 1rem solid green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method=""> 
+        <button type="button" class="btn btn-success" onclick="generarResultadoQuini6();">QUINI 6</button>
+    </form>
+    
+    <div id="contenedor">
+
+    </div>
+
+    <script>
+        function generarResultadoQuini6(){
+            document.getElementById('contenedor').innerHTML = "";
+            let resultados = [];
+
+            for(let i=0; i<6; i++){
+                let numero = Math.floor(Math.random() * 46);
+                while(resultados.includes(numero)){
+                    numero = Math.floor(Math.random() * 46);
+                }
+                resultados.push(numero);
+                document.getElementById('contenedor').innerHTML += `<p style="font-size: 2rem; font-weight: bold;">${numero}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
